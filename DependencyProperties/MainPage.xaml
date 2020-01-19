@@ -6,7 +6,8 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" 
+    d:DesignWidth="240" d:DesignHeight="240">
 
     <Grid Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
         <Grid.DataContext>
@@ -18,7 +19,8 @@
             <TextBlock Text="Value (Element Binding):"/>
             <TextBlock Text="{Binding ElementName=Slider, Path=Value}"/>
             <TextBlock Text="Font Size:"/>
-            <TextBlock  Text="{Binding RelativeSource={RelativeSource Self}, Path=FontSize}"/>
+            <TextBlock  Text="{Binding RelativeSource={RelativeSource Self},
+                Path=FontSize}"/>
             <Slider Minimum="1" Maximum="100" Height="20" 
                 HorizontalAlignment="Stretch" 
                 Value="{Binding Path=MyNumber,Mode=TwoWay}" 
@@ -26,7 +28,7 @@
             <StackPanel Orientation="Horizontal" Margin="30">
                 <Button Content="No Magic"/>
                 <Button Content="Magic" 
-                        local:MagicButton.IsShareButton="True" 
+                        local:MagicButton.IsShareButton="True"
                         Margin="20 0 0 0"/>
             </StackPanel>
         </StackPanel>

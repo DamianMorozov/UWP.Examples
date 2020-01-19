@@ -8,7 +8,8 @@
     xmlns:viewmodel="using:AppINotifyPropertyChanged.ViewModel"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
-    FontSize="22" Name="pageMain">
+    FontSize="22" Name="pageMain" 
+    d:DesignHeight="320" d:DesignWidth="320">
 
     <Page.Resources>
         <viewmodel:FontSettings x:Key="MyFontSettings"></viewmodel:FontSettings>
