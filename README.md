@@ -1,2 +1,3 @@
 # UWP examples.
+- AppINotifyPropertyChanged.
 - DependencyProperties.
