@@ -30,7 +30,7 @@
   <Applications>
     <Application Id="App"
       Executable="$targetnametoken$.exe"
-      EntryPoint="AppINotifyPropertyChanged.App">
+      EntryPoint="UWP.Examples.AppINotifyPropertyChanged.App">
       <uap:VisualElements
         DisplayName="AppINotifyPropertyChanged"
         Square150x150Logo="Assets\Square150x150Logo.png"
