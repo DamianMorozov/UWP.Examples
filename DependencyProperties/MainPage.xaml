@@ -1,0 +1,34 @@
+﻿<Page
+    x:Class="DependencyProperties.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:DependencyProperties"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.DataContext>
+            <local:MyDependencyObject/>
+        </Grid.DataContext>
+        <StackPanel Orientation="Vertical">
+            <TextBlock Text="Value: " x:Name="ValueText"/>
+            <TextBlock Text="{Binding MyNumber}"/>
+            <TextBlock Text="Value (Element Binding):"/>
+            <TextBlock Text="{Binding ElementName=Slider, Path=Value}"/>
+            <TextBlock Text="Font Size:"/>
+            <TextBlock  Text="{Binding RelativeSource={RelativeSource Self}, Path=FontSize}"/>
+            <Slider Minimum="1" Maximum="100" Height="20" 
+                HorizontalAlignment="Stretch" 
+                Value="{Binding Path=MyNumber,Mode=TwoWay}" 
+                x:Name="Slider"/>
+            <StackPanel Orientation="Horizontal" Margin="30">
+                <Button Content="No Magic"/>
+                <Button Content="Magic" 
+                        local:MagicButton.IsShareButton="True" 
+                        Margin="20 0 0 0"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>
