@@ -7,30 +7,26 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" 
-    d:DesignWidth="240" d:DesignHeight="240">
+    d:DesignWidth="240" d:DesignHeight="180">
 
     <Grid Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
         <Grid.DataContext>
             <local:MyDependencyObject/>
         </Grid.DataContext>
         <StackPanel Orientation="Vertical">
-            <TextBlock Text="Value: " x:Name="ValueText"/>
-            <TextBlock Text="{Binding MyNumber}"/>
-            <TextBlock Text="Value (Element Binding):"/>
-            <TextBlock Text="{Binding ElementName=Slider, Path=Value}"/>
-            <TextBlock Text="Font Size:"/>
-            <TextBlock  Text="{Binding RelativeSource={RelativeSource Self},
-                Path=FontSize}"/>
+            <TextBlock Text="Value: " x:Name="ValueText" Margin="10 0 10 0"/>
+            <TextBlock Text="{Binding Path=MyNumber, Mode=TwoWay}" Margin="10 0 10 0"/>
+            <TextBlock Text="Value (Element Binding):" Margin="10 0 10 0"/>
+            <TextBlock Text="{Binding ElementName=Slider, Path=Value}" Margin="10 0 10 0"/>
+            <TextBlock Text="Font Size:" Margin="10 0 0 0"/>
+            <TextBlock Text="{Binding RelativeSource={RelativeSource Self}, Path=FontSize}" 
+                Margin="10 0 10 0"/>
             <Slider Minimum="1" Maximum="100" Height="20" 
                 HorizontalAlignment="Stretch" 
-                Value="{Binding Path=MyNumber,Mode=TwoWay}" 
-                x:Name="Slider"/>
-            <StackPanel Orientation="Horizontal" Margin="30">
-                <Button Content="No Magic"/>
-                <Button Content="Magic" 
-                        local:MagicButton.IsShareButton="True"
-                        Margin="20 0 0 0"/>
-            </StackPanel>
+                Value="{Binding Path=MyNumber, Mode=TwoWay}" 
+                x:Name="Slider" Margin="10 0 10 0"/>
+            <Button Content="Magic" local:MagicButton.IsShareButton="True" 
+                HorizontalAlignment="Center" />
         </StackPanel>
     </Grid>
 </Page>
