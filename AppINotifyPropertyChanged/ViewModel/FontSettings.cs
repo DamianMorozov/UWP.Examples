@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel;
+using System.Runtime.CompilerServices;
 
 namespace AppINotifyPropertyChanged.ViewModel
 {
@@ -27,19 +28,19 @@ namespace AppINotifyPropertyChanged.ViewModel
             set 
             {
                 _size = value;
-                OnPropertyRaised(nameof(Size));
+                OnPropertyRaised();
             }
         }
-        
+
         #endregion
 
         #region INotifyPropertyChanged
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        private void OnPropertyRaised(string propertyName)
+        private void OnPropertyRaised([CallerMemberName] string caller = "")
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(caller));
         }
 
         #endregion
