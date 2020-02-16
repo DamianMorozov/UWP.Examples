@@ -1,23 +1,22 @@
 ﻿<Page
-    x:Class="AppINotifyPropertyChanged.MainPage"
+    x:Class="AppINotifyPropertyChanged.Views.MainPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:AppINotifyPropertyChanged"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:viewmodel="using:AppINotifyPropertyChanged.ViewModel"
+    xmlns:viewModels="using:AppINotifyPropertyChanged.ViewModels"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
-    FontSize="22" Name="pageMain" 
+    FontSize="22" Name="PageMain" 
     d:DesignHeight="320" d:DesignWidth="320">
 
     <Page.Resources>
-        <viewmodel:FontSettings x:Key="MyFontSettings"></viewmodel:FontSettings>
+        <viewModels:FontSettings x:Key="MyFontSettings"></viewModels:FontSettings>
     </Page.Resources>
 
     <Grid>
         <Grid.DataContext>
-            <viewmodel:FontSettings/>
+            <viewModels:FontSettings/>
         </Grid.DataContext>
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"></RowDefinition>
@@ -27,13 +26,13 @@
             <ColumnDefinition Width="1*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <TextBlock Name="textBlock" Grid.Row="0" Text="Font size" FontSize="22"
+        <TextBlock Name="TextBlockFont" Grid.Row="0" Text="Font size" FontSize="22"
             VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
         <!--Text="{Binding Size, Mode=TwoWay, Source={StaticResource MyFontSettings}, UpdateSourceTrigger=PropertyChanged}"-->
-        <TextBox Name="textBox" Grid.Row="1" Grid.Column="1" 
+        <TextBox Name="TextBoxFontSize" Grid.Row="1" 
             Text="{Binding Size, Mode=TwoWay, Source={StaticResource MyFontSettings}, UpdateSourceTrigger=PropertyChanged}"
             VerticalAlignment="Center" HorizontalAlignment="Center"
-            FontSize="22" TextChanged="textBox_TextChanged"
+            FontSize="22" TextChanged="TextBoxFontSize_TextChanged"
             ></TextBox>
     </Grid>
 </Page>
