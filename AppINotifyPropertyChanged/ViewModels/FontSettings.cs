@@ -26,7 +26,7 @@ namespace AppINotifyPropertyChanged.ViewModels
                 OnPropertyRaised();
             }
         }
-        
+
         #endregion
 
         #region INotifyPropertyChanged
