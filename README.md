@@ -2,3 +2,4 @@
 - AppINotifyPropertyChanged.
 - DependencyProperties.
 - ImageHelper.
+- XamlControls.
